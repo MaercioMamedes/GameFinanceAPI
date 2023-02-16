@@ -19,7 +19,9 @@ class DataApiFinancePaper:
         return value
 
     def _get_logo_url(self):
-        return self._paper_data.info['logo_url']
+        url_image = self._paper_data.info['logo_url']
+
+        return url_image
 
     def create_paper(self):
 
@@ -27,7 +29,7 @@ class DataApiFinancePaper:
             b3_code=self._b3_code,
             company_name=self._company_name,
             last_value=self._last_value,
-            logo_url=self._get_logo_url,
+            logo_url=self._logo_url,
         )
 
 
