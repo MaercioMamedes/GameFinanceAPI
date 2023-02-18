@@ -6,3 +6,4 @@ router = routers.DefaultRouter()
 router.register('papeis', PaperViewSet, basename='Paper')
 router.register('usuarios', UserViewSet, basename='User')
 router.register('carteira',WalletViewSet, basename='Wallet')
+

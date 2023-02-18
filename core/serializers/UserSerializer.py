@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from core.models import UserWallet
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -16,5 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
             email=validated_data['email'],
             password=validated_data['password'],
         )
+
+        UserWallet.objects.create(user=user)
 
         return user
