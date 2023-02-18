@@ -4,7 +4,7 @@ Game Finance API
 
 # Funcionalidades
 
-<input type="checkbox" disabled  id="one"><label style="margin-left: 5px;" for="one">Definir modelos e relacionamentos</label> 
+:heavy_check_mark: Definir modelos e relacionamentos
 
 <input type="checkbox" disabled checked id="two"  ><label style="margin-left: 5px;" for="two">Implementar lib de acesso aos Dados da bolsa de Valores B3</label>
 
