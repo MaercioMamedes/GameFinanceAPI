@@ -6,9 +6,8 @@ from rest_framework.reverse import reverse
 
 
 class Logout(APIView):
-    @staticmethod
-    def get(request):
-        auth.logout(request)
-        print(request.user)
-        api_root_url = reverse('api-root', request=request)
+
+    def get(self, request):
+        auth.logout(self.request)
+        api_root_url = reverse('api-root', request=self.request)
         return Response(status=302, headers={'Location': api_root_url})
