@@ -1,15 +1,33 @@
-Game Finance API
+# Game Finance API
+
+É um jogo que tem como objetivo obter a maior rentabilidade numa carteira virtual, com dados reais da bolsa de valores de São Paulo, a B3. Para Jogar é necessário efetuar o cadastro escolher no máximo cinco papéis listados na bolsa, ganha quem conseguir a maior rentabilidade dentro do período estipulado na rodada.
+
+Os dados dos papéis são reais, e são consumidos a partir do pacote [yfinance](https://github.com/ranaroussi/yfinance) que utiliza a API pública do [Yahoo Finance](https://finance.yahoo.com/).
+
+O objetivo do projeto é aprimorar minhas habilidades no Django Rest Framework, especificamente no tratamento de dados de requisições, autorizalções e permissões de usuários.
+
+## Building
+
+Esse projeto foi desenvolvido utilizando a versão 3.2.6 do interpretador Python. Todas as dependências
+estão listadas no arquivo *requiments.txt*
 
 
-
-# Funcionalidades
+## Etapas do projeto
 
 :heavy_check_mark: Definir modelos e relacionamentos
 
-<input type="checkbox" disabled checked id="two"  ><label style="margin-left: 5px;" for="two">Implementar lib de acesso aos Dados da bolsa de Valores B3</label>
+:heavy_check_mark: Implementar lib de acesso aos Dados da bolsa de Valores B3
 
-<input type="checkbox" disabled checked id="three"  ><label style="margin-left: 5px;" for="three">implementar autenticação de usuários</label>
+:heavy_check_mark: implementar autenticação de usuários
 
-<input type="checkbox" disabled checked id="three"  ><label style="margin-left: 5px;" for="three"> implementar permissões de usuários</label> 
+:x: implementar permissões de usuários
 
-<input type="checkbox" disabled checked id="four"  ><label style="margin-left: 5px;" for="four">Definir views e rotas</label> 
+:x: Definir view e rota para adicionar papel à carteira
+
+:x: Definir view e rota para editar carteira
+
+:x: Definir view e rota configurar rodada
+
+:x: Definir view e rota resultado
+
+:x: Definir view e rota para simular rodada
