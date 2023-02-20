@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from core.models import Wallet, UserWallet, Paper
-from django.shortcuts import get_object_or_404
+from core.models import Wallet
 
 
 class WalletSerializer(serializers.ModelSerializer):
@@ -13,12 +12,6 @@ class WalletSerializer(serializers.ModelSerializer):
         user_paper_qtd = Wallet.objects.filter(user=user.id)
         if len(user_paper_qtd) >= 5:
             raise serializers.ValidationError('o usuário já possui 5 papéis na carteira')
-
-        paper = get_object_or_404(Paper, pk=validated_data['paper'].id)
-        user_wallet = get_object_or_404(UserWallet, pk=user.id)
-
-        user_wallet.wallet_update(paper)
-        user_wallet.save()
 
         return Wallet.objects.create(
             user=user,

@@ -6,16 +6,15 @@ from core.helpers import DataApiFinancePaper
 class PaperSerializer(serializers.ModelSerializer):
     class Meta:
         model = Paper
-        fields = ['id','b3_code','company_name', 'last_value','logo_url']
+        fields = ['id','b3_code','company_name', 'first_value','last_value']
         extra_kwargs = {
                         'id':{'read_only': True},
-                        'company_name': {'read_only': True},
                         'last_value': {'read_only': True},
-                        'logo_url': {'read_only': True},
+                        'first_value': {'read_only': True},
         }
 
     def create(self, validated_data):
-        api = DataApiFinancePaper(validated_data['b3_code'])
+        api = DataApiFinancePaper(validated_data['b3_code'], validated_data['company_name'])
         return api.create_paper()
 
 

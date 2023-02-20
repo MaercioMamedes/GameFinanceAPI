@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Wallet, UserWallet, Paper
+from core.models import Wallet, Paper
 
 
 class PaperAdmin(admin.ModelAdmin):
@@ -16,8 +16,4 @@ class WalletAdmin(admin.ModelAdmin):
 admin.site.register(Wallet, WalletAdmin)
 
 
-class UserWalletAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'initial_value','final_value','profit')
 
-
-admin.site.register(UserWallet, UserWalletAdmin)

@@ -1,13 +1,15 @@
-from django.contrib import auth
-from django.shortcuts import redirect
-from rest_framework.views import APIView
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.reverse import reverse
+from rest_framework.views import APIView
 
 
 class Logout(APIView):
+    authentication_classes = (BasicAuthentication,)
+    permission_classes = (IsAuthenticated,)
 
-    def get(self, request):
-        auth.logout(self.request)
-        api_root_url = reverse('api-root', request=self.request)
-        return Response(status=302, headers={'Location': api_root_url})
+
+    def post(self, request, format=None):
+        # Desativar a autenticação básica para a sessão atual
+        self.request.session.flush()
+        return Response(status=204)
