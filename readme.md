@@ -93,6 +93,7 @@ estão listadas no arquivo *requiments.txt*
     "period": "3mo"
 }`
 
+*Valid periods: '1d', '5d', '1mo', '3mo', '6mo', '1y', '2y', '5y', '10y', 'ytd', 'max'*
 
 ## Disposições finais
 

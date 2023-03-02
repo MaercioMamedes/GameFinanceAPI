@@ -1,6 +1,6 @@
 import yfinance as yf
 from core.models import Paper
-
+"""Classe responsável por acessar a api do yahoo finance"""
 
 class DataApiFinancePaper:
     def __init__(self, paper_code, company_name):
@@ -14,6 +14,7 @@ class DataApiFinancePaper:
         return value
 
     def create_paper(self):
+        """Método para criar um novo papel"""
 
         return Paper.objects.create(
             b3_code=self._b3_code,
@@ -23,6 +24,7 @@ class DataApiFinancePaper:
 
 
 def update_values(paper_obj, period):
+    """Método para atualizar valor do papel"""
     data_b3 = yf.Ticker(paper_obj.b3_code).history(period=period, auto_adjust=True, interval='1d')
     last_value = data_b3['Close'][-1]
     first_value = data_b3['Close'][0]
